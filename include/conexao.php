@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$db = "Cadastros";
+$db = "cadastros";
 
 $mysqli = new mysqli($hostname, $username, $password, $db);
 if($mysqli->connect_errno) {
