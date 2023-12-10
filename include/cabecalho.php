@@ -22,7 +22,7 @@
                         <a class="nav-link" href="cadastroProd.php">Cadastrar produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listarProd.php">Listar produtos</a>
+                        <a class="nav-link" href="index.php">Listar produtos</a>
                     </li>
                 </ul>
             </div>
@@ -30,4 +30,4 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col mt-5">
+            <div class="col m-5">

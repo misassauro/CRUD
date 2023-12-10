@@ -5,8 +5,7 @@ $username = "root";
 $password = "";
 $db = "cadastros";
 
-$mysqli = new mysqli($hostname, $username, $password, $db);
-if($mysqli->connect_errno) {
-    echo 'Falha ao conectar com o banco de dados. (' . $mysqli->connect_errno . ') - ' . $mysqli->connect_error;
-}
+$conexao = mysqli_connect($hostname, $username, $password) or die ("Erro ao conectar (" . $conexao->connect_errno .") " . $conexao->connect_error);
+
+mysqli_select_db($conexao, $db);
 ?>
