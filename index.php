@@ -21,7 +21,7 @@ if(isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) {
 
             if (mysqli_num_rows($resultado) == 0) {
                 ?>
-                    <p>Você ainda não possui produtos cadastrados. Por favor, acesse a área <a href="cadastroProd.php">cadastrar produtos</a> para adicionar seu primeiro produto à lista.</p>
+                    <p>Você ainda não possui produtos cadastrados. Por favor, acesse a área <a href="cadastroProd.php">Cadastrar produtos</a> para adicionar seu primeiro produto à lista.</p>
                 <?php
             } else {
         ?>
