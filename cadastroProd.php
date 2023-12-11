@@ -16,6 +16,13 @@
             $peso = $_POST["peso"];
             $qtde = $_POST["qtde"];
 
+            if(isset($_FILES["foto"]) && !empty($_FILES["foto"]["name"])) {
+                $path = "assets/img/".$_FILES["foto"]["name"];
+                move_uploaded_file($_FILES["foto"]["tmp_name"], $path);
+            } else {
+                $path = "assets/img/imagem-padrao.png";
+            }
+
             if (empty($_POST["descricao"]) && empty($_POST["peso"])) {
                 $descricao = $_POST["descricao"] = "Descrição indefinida";
                 $peso = $_POST["peso"] = "Peso indefinido";
@@ -24,16 +31,6 @@
             } else if (empty($_POST["peso"])) {
                 $peso = $_POST["peso"] = "Peso indefinido";
             }
-            
-            if(isset($_FILES["foto"]) && !empty($_FILES["foto"])) {
-
-                $path = "assets/img/".$_FILES["foto"]["name"];
-                move_uploaded_file($_FILES["foto"]["tmp_name"], $path);
-
-                } else {
-                    $path = "assets/img/padrao.png";
-                    
-                }
 
             $query = "INSERT INTO produtos (nome, descricao, peso, qtde, imagem, data_upload) VALUES ('$nome', '$descricao', '$peso', '$qtde', '$path', now())";
 

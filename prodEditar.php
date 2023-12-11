@@ -19,7 +19,7 @@ if(isset($_POST) && !empty($_POST)) {
                 $peso = $_POST["peso"] = "Peso indefinido";
             }
             
-            if(isset($_FILES["foto"]) && !empty($_FILES["foto"])) {
+            if(isset($_FILES["foto"]) && !empty($_FILES["foto"]["name"])) {
 
                 $path = "assets/img/".$_FILES["foto"]["name"];
                 move_uploaded_file($_FILES["foto"]["tmp_name"], $path);
