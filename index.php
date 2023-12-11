@@ -38,8 +38,9 @@ if(isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) {
                                 </td>
                                 <td class="text-center"><?php echo $linha["nome"];?></td>
                                 <td class="text-center"><?php echo $linha["qtde"];?></td>
-                                <td class="text-center"><?php echo date('d/m/Y H:i', strtotime($linha["data_upload"]));?></td>
+                                <td class="text-center"><?php echo date('d/m/Y (H:i)', strtotime($linha["data_upload"]));?></td>
                                 <td class="text-center">
+                                    <a class="btn btn-secondary" href="prodView.php?id=<?php echo $linha["id"];?>">Visualizar</a>
                                     <a class="btn btn-warning" href="prodEditar.php?id=<?php echo $linha["id"];?>">Editar</a>
                                     <a class="btn btn-danger" href="prodExcluir.php?id=<?php echo $linha["id"];?>">Excluir</a>
                                 </td>
