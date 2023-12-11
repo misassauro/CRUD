@@ -15,6 +15,16 @@ if(isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) {
         <h1 class="text-center">Lista de produtos</h1>
     </div>
     <div class="card-body">
+        <?php 
+            $query = "SELECT * FROM produtos";
+            $resultado = mysqli_query($conexao, $query);
+
+            if (mysqli_num_rows($resultado) == 0) {
+                ?>
+                    <p>Você ainda não possui produtos cadastrados. Por favor, acesse a área <a href="cadastroProd.php">cadastrar produtos</a> para adicionar seu primeiro produto à lista.</p>
+                <?php
+            } else {
+        ?>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr class="table-dark">
@@ -54,6 +64,9 @@ if(isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) {
                 </tbody>
             </thead>
         </table>
+        <?php 
+            }
+        ?>
     </div>
 </div>
 
