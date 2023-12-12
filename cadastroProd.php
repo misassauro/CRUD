@@ -48,7 +48,7 @@
                 }
             } 
             else {
-                //Else vazio, já que, ao ingressar na página não existe $_POST definido. Sendo assim, qualquer coisa que colocarmos aqui aparecia antes mesmo do usuário cadastrar um produto. Ele poderia ser retirado daqui, mas preferi deixá-lo a fim de tomar nota.
+                //Else vazio, já que, ao ingressar na página não existe $_POST definido. Sendo assim, qualquer coisa que colocarmos aqui apareceria antes mesmo do usuário cadastrar um produto. Esse else poderia ser retirado daqui, mas preferi deixá-lo a fim de tomar nota.
     }
 
     ?>

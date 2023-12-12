@@ -21,7 +21,7 @@ if(isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) { //Se a URL possuir u
 
             if (mysqli_num_rows($resultado) == 0) { //Se o número de linhas de dados armazenados em $resultado for igual a 0, ou seja, se não houver nenhum cadastro dentro de nossa tabela de produtos, então a mensagem abaixo será exibida.
                 ?>
-                    <p>Você ainda não possui produtos cadastrados. Por favor, acesse a área <a href="cadastroProd.php">cadastrar produtos</a> para adicionar seu primeiro produto à lista.</p>
+                    <p>Você ainda não possui produtos cadastrados. Por favor, acesse a área <a href="cadastroProd.php">cadastrar produtos</a> para adicionar seu primeiro produto à tabela.</p>
                 <?php
             } else { //Caso contrário, será construída uma tabela para suportar os dados encontrados.
         ?>
@@ -44,7 +44,7 @@ if(isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) { //Se a URL possuir u
                         ?> 
                             <tr>
                                 <td class="text-center">
-                                    <img src="<?php echo $linha["imagem"];?>" width="80px" alt="Imagem do produto" />
+                                    <img src="<?php echo $linha["imagem"];?>" alt="Imagem do produto" />
                                 </td>
                                 <td class="text-center align-middle"><?php echo $linha["nome"];?></td>
                                 <td class="text-center align-middle"><?php echo $linha["qtde"];?></td>

@@ -36,9 +36,9 @@ else { //Se não for detectado nenhum ID, como aconteceria caso o usuário digit
         <h1>Produto: <?php echo $nome?></h1>
     </div>
         <div class="card-img-top text-center mt-5">
-            <img src="<?php echo $path?>" alt="Card image cap" width="300px">
+            <img src="<?php echo $path?>" alt="Card image cap">
         </div>
-        <div class="m-4">
+        <div class="exibir m-4">
             <!--Os inputs estão com o atributo readonly haja vista que esta página proporciona apenas a visualização das informações do produto, não sua edição.-->
             <label>ID:</label>
             <input type="text" name="id" value="<?php  echo $id; ?>" readonly class="form-control mb-3" >

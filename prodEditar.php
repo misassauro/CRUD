@@ -74,7 +74,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) { //Trecho de código já explica
     </div>
     <h2 class="card-title m-4">Produto: <?php echo $nome ?></h2>
     <form action="prodEditar.php" method="POST" enctype="multipart/form-data">
-        <div class="m-4">
+        <div class="exibir m-4">
 
             <label>ID:</label>
             <input type="text" name="id" value="<?php echo $id; ?>" readonly class="form-control mb-3">
