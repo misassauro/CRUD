@@ -33,7 +33,7 @@ else {
     </div>
         <div class="card-img-top text-center mt-5">
             <img src="<?php echo $foto?>" alt="Card image cap" width="300px">
-    </div>
+        </div>
         <div class="m-4">
 
             <label for="nome">ID:</label>
@@ -51,7 +51,7 @@ else {
                 <label for="qtde">Quantidade (unidades):</label>
                 <input type="number" name="qtde" value="<?php  echo $qtde; ?>" readonly class="form-control mb-3">
        
-  </div>
+        </div>
 </div>
  <?php
     include("include/rodape.php");

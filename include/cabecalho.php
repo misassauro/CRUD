@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>CadPlus</title>
 </head>
 
@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastroProd.php">Cadastrar produtos</a>
+                        <a class="nav-link" href="index.php">Tabela de produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Listar produtos</a>
+                        <a class="nav-link" href="cadastroProd.php">Cadastrar produtos</a>
                     </li>
                 </ul>
             </div>

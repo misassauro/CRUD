@@ -25,11 +25,12 @@ if(isset($_POST) && !empty($_POST)) {
                 move_uploaded_file($_FILES["foto"]["tmp_name"], $path);
 
                 } else {
-                    $path = "assets/img/padrao.png";
-                    
+                    $query = "SELECT imagem from produtos WHERE id = " . $_POST["id"];
+                    $resultado = mysqli_query($conexao, $query);
+                    $path = mysqli_fetch_column($resultado);
                 }
 
-            $query = "UPDATE produtos SET nome = '$nome', descricao = '$descricao', peso = '$peso', qtde = '$qtde', imagem = '$path', data_upload = now() WHERE id = '$id'";
+                $query = "UPDATE produtos SET nome = '$nome', descricao = '$descricao', peso = '$peso', qtde = '$qtde', imagem = '$path', data_upload = now() WHERE id = '$id'";
 
                 $resultado = mysqli_query($conexao, $query);
                 if ($resultado == 1) {
@@ -38,7 +39,7 @@ if(isset($_POST) && !empty($_POST)) {
                     header("Location: index.php?mensagem=Ocorreu um erro ao editar o produto.");
                 }
 
-} else if(isset($_GET["id"]) && !empty($_GET["id"])) {
+} if(isset($_GET["id"]) && !empty($_GET["id"])) {
     include("include/conexao.php");
 
     $query = "SELECT * from produtos where id = ".$_GET["id"];
@@ -52,7 +53,7 @@ if(isset($_POST) && !empty($_POST)) {
     $descricao = $dados["descricao"];
     $peso = $dados["peso"];
     $qtde = $dados["qtde"];
-    $foto = $dados["imagem"];
+    $path = $dados["imagem"];
 
 } 
 else {
@@ -67,33 +68,33 @@ else {
         <h1>Editar produto</h1>
     </div>
         <div class="card-img-top text-center mt-5">
-            <img src="<?php echo $foto?>" alt="Card image cap" width="200px">
+            <img src="<?php echo $path?>" alt="Card image cap" width="200px">
     </div>
         <h2 class="card-title m-4">Produto: <?php echo $nome?></h2>
         <form action="prodEditar.php" method="POST" enctype="multipart/form-data">
         <div class="m-4">
 
-            <label for="nome">ID:</label>
-                <input type="text" name="id" value="<?php  echo $id; ?>" readonly class="form-control mb-3" >
+            <label>ID:</label>
+            <input type="text" name="id" value="<?php  echo $id; ?>" readonly class="form-control mb-3" >
 
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" value="<?php  echo $nome; ?>" class="form-control mb-3">
+            <label>Nome:</label>
+            <input type="text" name="nome" required value="<?php  echo $nome; ?>" class="form-control mb-3">
 
-                <label for="descricao">Descrição:</label>
-                <textarea name="descricao" class="form-control mb-3" rows="1"><?php  echo $descricao; ?></textarea>
+            <label>Descrição:</label>
+            <textarea name="descricao" class="form-control mb-3" rows="1"><?php  echo $descricao; ?></textarea>
 
-                <label for="peso">Peso (em kg):</label>
-                <input type="text" name="peso" value="<?php  echo $peso; ?>" class="form-control mb-3" id="peso">
+            <label>Peso (em kg):</label>
+            <input type="text" name="peso" value="<?php  echo $peso; ?>" class="form-control mb-3" id="peso">
 
-                <label for="qtde">Quantidade (unidades):</label>
-                <input type="number" name="qtde" value="<?php  echo $qtde; ?>" class="form-control mb-3">
+            <label>Quantidade (unidades):</label>
+            <input type="number" name="qtde" required value="<?php  echo $qtde; ?>" class="form-control mb-3">
 
-                <label for="foto">Nova foto:</label><br>
-                <input type="file" name="foto" class="form-control-file mb-1" accept="image/.jpg, .jpeg, .png">
-                <hr>
-                <div class="mt-4 text-center">
-                    <button type="submit" name="submit" class="btn btn-primary">Editar</button>
-                </div>
+            <label>Nova foto:</label><br>
+            <input type="file" name="foto" id="novaFoto" class="form-control-file mb-1" accept="image/jpeg, .jpg, .png">
+            <hr>
+            <div class="mt-4 text-center">
+                <button type="submit" name="submit" class="btn btn-primary">Editar</button>
+            </div>
     </form>
        
   </div>
